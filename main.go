@@ -3,19 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var n int
-	var e float64 = 0.0
+	var limite int
+	var euler float64
+	var factorial float64
 
-	factorial := 1.0
+	fmt.Scan(&limite)
 
-	fmt.Scan(&n)
-
-	for i := 0; i <= n; i++ {
-		for j := i; j > 1; j-- {
-			factorial *= float64(j)
-		}
-		e += 1.0 / float64(factorial)
+	for i := 0; i <= limite; i++ {
 		factorial = 1
+		for j := i; j > 1; j-- {
+			factorial = factorial * float64(j)
+		}
+		
+		euler += (1 / factorial)
 	}
-	println(e)
+	fmt.Println(euler)
 }
